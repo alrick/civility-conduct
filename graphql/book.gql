@@ -1,0 +1,98 @@
+query GetBooks($limit: Int!, $page: Int!, $sort: [String!]!) {
+	books_aggregated(filter: {status: {_eq: "draft"}, post_1500_edition_number: {_eq: 1} }) {
+    count {
+      id
+		}
+	},
+	books(limit: $limit, page: $page, filter: {status: {_eq: "draft"}, post_1500_edition_number: {_eq: 1} }, sort: $sort) {
+		id
+		short_title
+		location_on_imprint
+		date_of_imprint
+		author_modern_attribution
+		implied_gender_of_author
+    estimated_total_page_number
+		post_1500_edition_number
+		total_number_of_editions
+		other_editions(sort: "post_1500_edition_number") {
+			id
+			short_title
+			post_1500_edition_number
+		}
+	}
+}
+
+query GetBook($id: ID!) {
+	book: books_by_id(id: $id) {
+		id
+		short_title
+		short_title_modern_spelling
+		full_title_original_spelling
+		variant_title_or_aka
+		presence_of_date_on_imprint
+		date_of_imprint
+		location_on_imprint
+		all_imprint_text
+		wing_stc_number
+		estc_citation_no
+		see_also
+		format {
+			title
+		}
+		estimated_total_page_number
+		unpaginated
+		paginated_roman_numerals
+		paginated_arabic_numerals
+		number_of_leaves
+		language_of_first_publication {
+			title
+		}
+		other_language_of_first_publication
+		language_of_title {
+			title
+		}
+		illustration
+		illustration_description
+		ornament_or_illustration_on_title_page
+		tp_ornament_or_illustration
+		epigram_epigraph_on_title_page
+		black_letter_on_title_page
+		presence_of_books
+		presence_of_chapters
+		presence_of_letters
+		presence_of_sermons
+		presence_of_stanzas
+		other_divisions
+		date_of_london_first_edition
+		post_1500_edition_number
+		total_number_of_editions
+		term_catalogues_adverts
+		newspaper_adverts
+		price_on_title_page
+		price_pounds
+		price_shillings
+		price_pence
+		latin_on_title_page
+		greek_on_title_page
+		author_title_page_attribution
+		author_modern_attribution
+		implied_gender_of_author
+		implied_status_of_author_on_title_page
+		title_page_author_descriptor
+		translation
+		translator_attribution_on_title_page
+		modern_translator_attribution
+		direct_addressee
+		direct_addressee_descriptor {
+			title
+		}
+		paratexts {
+			paratexts_id {
+				title
+			}
+		}
+		other_paratext
+		working_generic_labels
+		notes
+	}
+}

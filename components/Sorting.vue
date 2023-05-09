@@ -1,16 +1,18 @@
 <script setup>
-const store = useCoinsStore()
+const store = useBooksStore()
 </script>
 
 <template>
-  <div class="btn-group">
-    <a @click="store.setSort(store.SORT_IDENTIFIER_KEY)" class="link link-hover mr-4" :class="{ 'link-primary': store.sortKey == store.SORT_IDENTIFIER_KEY }">
-      <IconAscendingLetters class="inline" />
-      Identifiant
-    </a>
-    <a @click="store.setSort(store.SORT_DATE_KEY)" class="link link-hover" :class="{ 'link-primary': store.sortKey == store.SORT_DATE_KEY }">
-      <IconAscendingNumbers class="inline" />
-      Date
-    </a>
-  </div>
+  <a @click="store.setSort(store.SORT_IDENTIFIER_KEY)" class="btn btn-sm btn-ghost mr-4" :class="{ 'btn-link': store.sortKey == store.SORT_IDENTIFIER_KEY }">
+    <IconAscendingLetters class="inline" />
+    Title
+  </a>
+  <a @click="store.setSort(store.SORT_DATE_KEY)" class="btn btn-sm btn-ghost mr-4" :class="{ 'btn-link': store.sortKey == store.SORT_DATE_KEY }">
+    <IconAscendingNumbers class="inline" />
+    Asc. Date
+  </a>
+  <a @click="store.setSort(store.SORT_DATED_KEY)" class="btn btn-sm btn-ghost mr-4" :class="{ 'btn-link': store.sortKey == store.SORT_DATED_KEY }">
+    <IconDescendingNumbers class="inline" />
+    Desc. Date
+  </a>
 </template>

@@ -1,8 +1,7 @@
 <script setup>
-const store = useCoinsStore()
+const store = useBooksStore()
 </script>
 
 <template>
-  <h2 class="font-bold text-xl pb-2">{{ store.total }} Pièces</h2>
-  <p>Aucun filtre configuré pour l'instant</p>
+  <h2 class="font-bold text-xl mr-8">{{ store.total }} Records</h2>
 </template>

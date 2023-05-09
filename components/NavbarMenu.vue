@@ -1,15 +1,15 @@
 <template>
   <ul class="menu menu-horizontal px-1">
     <li>
-      <NuxtLink to="/coins">
-        <IconCoins />
-        Pièces
+      <NuxtLink to="/books">
+        <IconBook />
+        Books
       </NuxtLink>
     </li>
     <li>
       <NuxtLink to="/about">
         <IconInfo />
-        A propos
+        About
       </NuxtLink>
     </li>
   </ul>

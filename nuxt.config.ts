@@ -14,7 +14,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      GQL_HOST: 'https://eddb9.unifr.ch/nafo/graphql' // overwritten by process.env.GQL_HOST
+      GQL_HOST: 'https://eddb9.unifr.ch/conduct/graphql' // overwritten by process.env.GQL_HOST
     }
   }
 })

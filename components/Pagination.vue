@@ -1,5 +1,5 @@
 <script setup>
-const store = useCoinsStore()
+const store = useBooksStore()
 
 function scrollToTop() {
   const element = document.getElementById('nuxtpage');

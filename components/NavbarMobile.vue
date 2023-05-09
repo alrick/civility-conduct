@@ -5,13 +5,13 @@
     </label>
     <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
       <li>
-        <NuxtLink to="/coins">
-          Pièces
+        <NuxtLink to="/books">
+          Books
         </NuxtLink>
       </li>
       <li>
         <NuxtLink to="/about">
-          A propos
+          About
         </NuxtLink>
       </li>
     </ul>
