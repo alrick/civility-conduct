@@ -14,6 +14,7 @@ export const useBooksStore = defineStore('books', () => {
   const total = ref(1)
   const sort = ref(SORT_IDENTIFIER_VALUE)
   const sortKey = ref(SORT_IDENTIFIER_KEY)
+  const fetchError: Ref<any> = ref(false)
 
   const maxPage = computed(() => Math.ceil(total.value / LIMIT))
 
@@ -54,9 +55,10 @@ export const useBooksStore = defineStore('books', () => {
     const { data } = await useAsyncGql('GetBooks', { limit: LIMIT, page: page.value, sort: sort.value })
     total.value = data?.value?.books_aggregated[0]?.count?.id || 0
     books.value = data?.value?.books || []
+    fetchError.value = !data
 
     return nextTick() // return a promise resolved at next DOM update
   }
 
-  return { books, page, maxPage, total, sort, sortKey, prevPage, nextPage, goToPage, setSort, fetchBooks, SORT_IDENTIFIER_KEY, SORT_DATE_KEY, SORT_DATED_KEY, LIMIT }
+  return { books, page, maxPage, total, sort, sortKey, fetchError, prevPage, nextPage, goToPage, setSort, fetchBooks, SORT_IDENTIFIER_KEY, SORT_DATE_KEY, SORT_DATED_KEY, LIMIT }
 })

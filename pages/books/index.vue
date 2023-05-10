@@ -5,12 +5,13 @@ store.fetchBooks()
 </script>
 
 <template>
-  <div class="min-h-screen bg-base-300 pt-24 px-4 2xl:px-60">
+  <ErrorHero v-if="store.fetchError" />
+  <div v-else class="min-h-screen bg-base-300 pt-24 px-4 2xl:px-60">
     <div class="flex my-4">
       <Filters />
       <Sorting />
       <div class="grow"></div>
-      <Pagination />
+      <Pagination v-if="store.total > store.LIMIT" />
     </div>
     <!-- <label for="main-drawer" class="btn btn-link drawer-button">Open sidebar</label> -->
     <table class="table w-full">
@@ -28,5 +29,5 @@ store.fetchBooks()
       <div class="grow"></div>
       <Pagination v-if="store.total > store.LIMIT" />
     </div>
-    </div>
-  </template>
+  </div>
+</template>

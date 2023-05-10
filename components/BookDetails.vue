@@ -6,13 +6,13 @@ const props = defineProps({
 
 <template>
   <div class="bg-base-100 shadow-xl rounded-xl">
-    <h2 class="text-4xl font-bold leading-normal pt-10 pl-10">
+    <h2 class="text-4xl font-bold leading-normal pt-10 px-10">
       {{ book.short_title || 'No title' }}
     </h2>
     <h3 v-if="book.author_modern_attribution" class="text-3xl pl-10 mb-10">
       {{ book.author_modern_attribution }}
     </h3>
-    <div class="px-4 pb-10">
+    <div class="px-6 pb-10">
       <div class="table table-zebra w-full">
         <div class="table-row-group">
           <DataRow title="Short title" :data="book.short_title" />
@@ -50,12 +50,6 @@ const props = defineProps({
           <DataRow title="Date of London First edition" :data="book.date_of_london_first_edition" />
           <DataRow title="Post 1500 Edition Number" :data="book.post_1500_edition_number" />
           <DataRow title="Total Number of Editions" :data="book.total_number_of_editions" />
-          <DataRow title="Term Catalogue Adverts" :data="book.term_catalogues_adverts" />
-          <DataRow title="Newspaper Adverts" :data="book.newspaper_adverts" />
-          <DataRowBool title="Price on Title Page" :data="book.price_on_title_page" />
-          <DataRow title="Price £" :data="book.price_pounds" />
-          <DataRow title="Price s" :data="book.price_shillings" />
-          <DataRow title="Price d" :data="book.price_pence" />
           <DataRowBool title="Latin on Title Page" :data="book.latin_on_title_page" />
           <DataRowBool title="Greek on Title Page" :data="book.greek_on_title_page" />
           <DataRow title="Author Title Page Attribution" :data="book.author_title_page_attribution" />

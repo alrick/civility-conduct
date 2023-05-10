@@ -11,9 +11,6 @@ query GetBooks($limit: Int!, $page: Int!, $sort: [String!]!) {
 		date_of_imprint
 		author_modern_attribution
 		implied_gender_of_author
-    estimated_total_page_number
-		post_1500_edition_number
-		total_number_of_editions
 		other_editions(sort: "post_1500_edition_number") {
 			id
 			short_title
@@ -66,12 +63,6 @@ query GetBook($id: ID!) {
 		date_of_london_first_edition
 		post_1500_edition_number
 		total_number_of_editions
-		term_catalogues_adverts
-		newspaper_adverts
-		price_on_title_page
-		price_pounds
-		price_shillings
-		price_pence
 		latin_on_title_page
 		greek_on_title_page
 		author_title_page_attribution
